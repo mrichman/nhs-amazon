@@ -7,8 +7,8 @@ import config
 from amazonmws.mwsclient import MWS
 from formatters import ColorFormatter
 
-logging.getLogger("").setLevel(logging.INFO)
-logging.getLogger("boto").setLevel(logging.INFO)
+logging.getLogger("").setLevel(logging.DEBUG)
+logging.getLogger("boto").setLevel(logging.DEBUG)
 consoleHandler = logging.StreamHandler()
 consoleHandler.setFormatter(ColorFormatter())
 logging.getLogger("").addHandler(consoleHandler)
@@ -22,4 +22,3 @@ try:
         report = mws.get_report(report_id=r)
 except Exception as e:
     logging.error(e.message)
-
